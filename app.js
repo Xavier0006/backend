@@ -4,11 +4,13 @@ const app = express();
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://test:LeRtDvsCTG8Y2tEK@cluster0-pme76.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://test:azerty@cluster0.iir4uua.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch((error) => {
     console.error('Connexion à MongoDB échouée:', error);
+    console.error('Stack trace:', error.stack); // Log the stack trace
   });
+
 
 
 app.use((req, res, next) => {
